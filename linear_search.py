@@ -1,10 +1,12 @@
-b = [85, 96, 6, 22, 10, 94, 71, 38, 43, 63]
-flag = 0
-nagasa = len(b)
-query = int(input('query? '))
+data = [50, 30, 90, 10, 20, 70, 60, 40, 80]
+flag = False
+query = int(input('探したい数字を入力して下さい。'))
 
-for i in range(nagasa):
-    print('b[{0}]={1} is {2}?'.format(i, b[i], query))
-    if (query == b[i]):
-        flag = 1
-print('flag=', flag)
+for i in range(len(data)):
+    if (query == data[i]):
+        print(i+1, '番目にあります。')
+        flag = True
+        break
+
+if flag == False:
+    print('見つかりませんでした。')
