@@ -16,6 +16,6 @@ while head <= tail:
         head = center+1
 
 if flag == 1:
-    print(query, 'がありました。')
+    print(center+1, '番目にありました。')
 else:
     print(query, 'はありませんでした。')
