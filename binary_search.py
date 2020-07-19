@@ -1,16 +1,21 @@
-b = [1, 6, 10, 12, 21, 22, 25, 29, 38, 43, 44, 63, 71, 85, 94, 96]
+data = [1, 6, 10, 12, 21, 22, 25, 29, 38, 43, 44, 63, 71, 85, 94]  # dataはソートされている必要がある
+
 flag = 0
-nagasa = len(b)
-query = int(input('query? '))
-start = int(0)
-end = int(nagasa-1)
-while start <= end:
-    center = int((start+end)/2)
-    if (query == b[center]):
+query = int(input('探したい数字を入力して下さい。 '))
+head = int(0)  # 先頭の添字を代入
+tail = int(len(data)-1)  # 末尾の添字を代入
+
+while head <= tail:
+    center = int((head+tail)/2)
+    if (query == data[center]):
         flag = 1
         break
-    elif query < b[center]:
-        end = center-1
+    elif query < data[center]:
+        tail = center-1
     else:
-        start = center+1
-print('flag=', flag)
+        head = center+1
+
+if flag == 1:
+    print(query, 'がありました。')
+else:
+    print(query, 'はありませんでした。')
