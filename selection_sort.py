@@ -6,7 +6,7 @@ def viewArray(arg):
     print(out)
 
 # 選択ソート関数
-def selectionsort(arg):
+def selection_sort(arg):
     for e in range(len(arg)-1, 0, -1):
         for s in range(0, e):
             if arg[s] > arg[e]:
